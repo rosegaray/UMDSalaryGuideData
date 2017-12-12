@@ -18,8 +18,8 @@ wait = WebDriverWait(driver, 20)
 
 # Stores each page's data
 data = {}
-
-for page in range(2):
+	
+for page in range(1029):
 	# Grab "tbody" tag
 	wait.until(EC.visibility_of_element_located((By.TAG_NAME, "tbody")))
 
@@ -31,9 +31,17 @@ for page in range(2):
 
 driver.close()
 
-for page in data.items():
-	soup = bs(data[page], 'html.parser')
-	soup.prettify()
+with open("results.txt","w") as acct:
+	for page, content in data.items():
+		soup = bs(content, 'html.parser')
+		soup.prettify()
+		#print(soup)
+		for tr in soup.find_all('tr'):
+			stack = []
+			for td in tr.findAll('td'):
+				stack.append(td.text.replace('\n', '').replace('\t', '').strip())
+			acct.write(", ".join(stack) + '\n')
+
 
 
 
