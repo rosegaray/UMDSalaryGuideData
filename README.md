@@ -1,2 +1,4 @@
 # UMD Salary Guide Data
-Salary guide data from 2013-2017 scraped from http://salaryguide.diamondbacklab.com/#/salGuide?year=2017
+Salary guide data from 2013-2017 
+Scraped from http://salaryguide.diamondbacklab.com/#/salGuide?year=2017
+Used Selenium and PhantomJS to render the javascript from the site, then used Beautiful Soup to format data into a pandas dataframe object 

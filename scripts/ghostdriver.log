@@ -1,0 +1,10 @@
+[INFO  - 2017-12-12T17:16:46.372Z] GhostDriver - Main - running on port 62048
+[INFO  - 2017-12-12T17:16:47.123Z] Session [3bcc03d0-df60-11e7-8e73-4f9d8e33509a] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-12-12T17:16:47.123Z] Session [3bcc03d0-df60-11e7-8e73-4f9d8e33509a] - page.customHeaders:  - {}
+[INFO  - 2017-12-12T17:16:47.123Z] Session [3bcc03d0-df60-11e7-8e73-4f9d8e33509a] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-12-12T17:16:47.123Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 3bcc03d0-df60-11e7-8e73-4f9d8e33509a
+[ERROR - 2017-12-12T17:16:50.737Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1513099010695
+
+  phantomjs://platform/console++.js:263 in error
+[INFO  - 2017-12-12T17:21:46.363Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-12-12T17:21:46.364Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session '3bcc03d0-df60-11e7-8e73-4f9d8e33509a', because windowless
