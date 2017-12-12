@@ -6,13 +6,21 @@ from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup as bs
 import requests as rq
 import re
+import csv
+
 
 
 # Using PhantomJS to render the webpage
 driver = webdriver.PhantomJS(executable_path="/Users/rosegaray/Desktop/phantomjs-2.1.1-macosx/bin/phantomjs")
 driver.set_window_size(1920,1080)
 
-driver.get("http://salaryguide.diamondbacklab.com/#/salGuide")
+driver.get("http://salaryguide.diamondbacklab.com/#/salGuide?year=2017")
+#2017 is 1029
+#2016 is 1010
+#2015 is 1022
+#2014 is 1251
+#2013 is 1210
+
 # Wait for site to load
 wait = WebDriverWait(driver, 20)
 
@@ -31,7 +39,8 @@ for page in range(1029):
 
 driver.close()
 
-with open("results.txt","w") as acct:
+with open("2017_data.csv","w") as acct:
+	writer = csv.writer(acct)
 	for page, content in data.items():
 		soup = bs(content, 'html.parser')
 		soup.prettify()
@@ -40,23 +49,5 @@ with open("results.txt","w") as acct:
 			stack = []
 			for td in tr.findAll('td'):
 				stack.append(td.text.replace('\n', '').replace('\t', '').strip())
-			acct.write(", ".join(stack) + '\n')
-
-
-
-
-# data = []
-# table = soup.find('table', attrs={'class':'lineItemsTable'})
-# table_body = table.find('tbody')
-
-# rows = table_body.find_all('tr')
-# for row in rows:
-#     cols = row.find_all('td')
-#     cols = [ele.text.strip() for ele in cols]
-#     data.append([ele for ele in cols if ele]) # Get rid of empty values
-
-
-
-
-
+			writer.writerow(stack)
 
